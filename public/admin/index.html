@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>SPHERONIX — Admin</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Geist:wght@400..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/admin.css?v=1" />
+</head>
+<body>
+  <!-- Login -->
+  <main class="login" id="login" hidden>
+    <form class="login__card" id="loginForm">
+      <span class="label"><span class="label__index">AD</span><span class="label__text">Admin</span></span>
+      <h1>SPHERONIX</h1>
+      <p class="muted" id="loginHint">Sign in to manage applications and site content.</p>
+      <label>Password<input type="password" name="password" autocomplete="current-password" required /></label>
+      <p class="error" id="loginError" role="alert"></p>
+      <button class="btn btn--primary btn--full" type="submit">Sign in</button>
+      <a class="muted small" href="/">← Back to the website</a>
+    </form>
+  </main>
+
+  <!-- App -->
+  <div class="app" id="app" hidden>
+    <aside class="side">
+      <a class="side__brand" href="/" target="_blank" rel="noopener">SPHERONIX<small class="mono">ADMIN</small></a>
+      <nav class="side__nav" id="tabs">
+        <button data-tab="overview" class="is-active"><span class="mono">01</span>Overview</button>
+        <button data-tab="applications"><span class="mono">02</span>Applications</button>
+        <button data-tab="content"><span class="mono">03</span>Site content</button>
+      </nav>
+      <div class="side__foot">
+        <a class="btn btn--ghost btn--full" href="/" target="_blank" rel="noopener">View site ↗</a>
+        <button class="btn btn--ghost btn--full" id="logout">Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- Overview -->
+      <section class="panel" data-panel="overview">
+        <header class="panel__head"><div><span class="eyebrow mono">01 · OVERVIEW</span><h2>Admissions at a glance</h2></div></header>
+        <div class="tiles" id="tiles"></div>
+        <div class="db-status-bar" id="dbStatusBar">
+          <div class="db-badge"><span class="db-dot" id="mongoDot"></span><span id="mongoText">MongoDB: Checking...</span></div>
+          <div class="db-badge"><span class="db-dot" id="geminiDot"></span><span id="geminiText">Google AI Studio (Gemini): Checking...</span></div>
+          <div class="db-badge"><span class="db-dot" id="mailDot"></span><span id="mailText">Email Alerts: Checking...</span></div>
+        </div>
+        <div class="grid2">
+          <figure class="card chart">
+            <figcaption><h3>Applications by program</h3><span class="muted small">All time</span></figcaption>
+            <div class="bars" id="byProgram"></div>
+          </figure>
+          <figure class="card chart">
+            <figcaption><h3>Applications per day</h3><span class="muted small">Last 14 days</span></figcaption>
+            <div class="cols" id="byDay"></div>
+          </figure>
+        </div>
+        <p class="notice" id="sampleWarn" hidden>Placements, featured stories, companies and stats are still <b>sample data</b>. Replace them under <em>Site content</em> and turn off the sample notice before you publish.</p>
+      </section>
+
+      <!-- Applications -->
+      <section class="panel" data-panel="applications" hidden>
+        <header class="panel__head">
+          <div><span class="eyebrow mono">02 · APPLICATIONS</span><h2>Applications</h2></div>
+          <a class="btn btn--ghost" href="/api/admin/applications.csv">Export CSV</a>
+        </header>
+        <div class="filters">
+          <input type="search" id="fSearch" placeholder="Search name, email or phone" />
+          <select id="fStatus"><option value="">All statuses</option></select>
+          <select id="fProgram"><option value="">All programs</option></select>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Date</th><th>Applicant</th><th>Program</th><th>Background</th><th>Status</th><th></th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+          <p class="empty muted" id="empty" hidden>No applications match.</p>
+        </div>
+      </section>
+
+      <!-- Content -->
+      <section class="panel" data-panel="content" hidden>
+        <header class="panel__head">
+          <div><span class="eyebrow mono">03 · SITE CONTENT</span><h2>Site content</h2></div>
+          <div class="actions">
+            <span class="dirty mono" id="dirty" hidden>UNSAVED CHANGES</span>
+            <button class="btn btn--ghost" id="resetContent">Reset to defaults</button>
+            <button class="btn btn--primary" id="saveContent">Save changes</button>
+          </div>
+        </header>
+        <div class="errors" id="contentErrors" hidden></div>
+        <div class="content-layout">
+          <nav class="content-nav" id="contentNav"></nav>
+          <div class="content-form" id="contentForm"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="/admin/admin.js?v=1"></script>
+</body>
+</html>

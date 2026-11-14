@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SPHERONIX — Corporate training, engineered</title>
+  <meta name="description" content="Spheronix Technology corporate training: 4 months of B-School style daily practicals, 2 months on live company projects, a letter of experience and job assistance. Full Stack + AI, Embedded & IoT, Generative AI, Data Analysis." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Geist:wght@400..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=24" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+</head>
+<body class="is-loading">
+  <canvas class="space-stage" id="world" aria-hidden="true"></canvas>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <a href="#welcome" class="site-header__brand" aria-label="Spheronix home"><span class="wordmark">SPHERONIX</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-links__item" href="#about" data-nav="1"><span>About</span><span class="nav-links__plus"></span></a>
+      <a class="nav-links__item" href="#work" data-nav="2"><span>Placements</span><span class="nav-links__plus"></span></a>
+      <a class="nav-links__item" href="#process" data-nav="3"><span>Process</span><span class="nav-links__plus"></span></a>
+      <a class="nav-links__item" href="#studio" data-nav="4"><span>Studio</span><span class="nav-links__plus"></span></a>
+      <a class="nav-links__item" href="#finder" data-nav="5"><span>Finder</span><span class="nav-links__plus"></span></a>
+    </nav>
+    <div class="site-header__right">
+      <button class="btn btn--primary btn--sm" data-apply><span class="btn__label">Apply now</span></button>
+      <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+        <span class="menu-button__tag mono"><span class="menu-button__chip" id="menuChip">00</span><span class="menu-button__name" id="menuName">Welcome</span></span>
+        <span class="menu-button__bars"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu is-closed" id="mobileMenu" aria-label="Menu">
+    <canvas class="mobile-menu__pixels" id="menuPixels"></canvas>
+    <ol class="mobile-menu__list">
+      <li><a class="mobile-menu__item" href="#about"><span class="mono">01</span><span class="mobile-menu__label">About</span></a></li>
+      <li><a class="mobile-menu__item" href="#work"><span class="mono">02</span><span class="mobile-menu__label">Placements</span></a></li>
+      <li><a class="mobile-menu__item" href="#process"><span class="mono">03</span><span class="mobile-menu__label">Process</span></a></li>
+      <li><a class="mobile-menu__item" href="#studio"><span class="mono">04</span><span class="mobile-menu__label">Studio</span></a></li>
+      <li><a class="mobile-menu__item" href="#finder"><span class="mono">05</span><span class="mobile-menu__label">Program finder</span></a></li>
+    </ol>
+    <div class="mobile-menu__foot"><button class="btn btn--primary" data-apply><span class="btn__label">Apply now</span></button></div>
+  </nav>
+
+  <main id="main">
+    <!-- 00 · WELCOME -->
+    <section class="scene" id="welcome" data-vh="430" data-chapter="0">
+      <div class="scene__frame">
+        <div class="scene__layer hero" data-range="-1,-1,0.30,0.5">
+          <div class="hero__inner container">
+            <p class="hero__slogan intro-in">We build careers through corporate training</p>
+            <div class="hero__heading">
+              <h1 class="hero__title"><span class="emerge-line"><span>Careers,</span></span><span class="emerge-line"><span>engineered.</span></span></h1>
+              <div class="hero__side intro-in" style="--d:.45s">
+                <p>Four months of B-School style, day-to-day practical training. Two months on live company projects. Spheronix trains you, then helps you get hired.</p>
+                <div class="hero__actions">
+                  <a class="btn btn--primary btn--lg" href="#work"><span class="btn__label">See placements</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+                  <button class="btn btn--ghost" data-apply><span class="btn__label">Apply now</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 · ABOUT -->
+    <section class="scene" id="about" data-vh="1800" data-chapter="1">
+      <div class="scene__frame">
+        <div class="scene__layer scene__layer--center container" data-range="0.05,0.11,0.18,0.235">
+          <div class="beat">
+            <span class="label"><span class="label__index">01</span><span class="label__text">About</span></span>
+            <h2 class="beat__title"><span class="beat__line">Practically trained.</span><span class="beat__line">Professionally ready.</span></h2>
+            <p class="beat__intro">Spheronix trains you inside a technology company. Programs, practicals, mentoring and company projects — all within one team.</p>
+          </div>
+        </div>
+
+        <div class="scene__layer scene__layer--center container" data-range="0.25,0.27,0.6,0.64">
+          <p class="focus-text" id="focusText" data-from="0.27" data-to="0.55">What students only watch, they <em>forget</em>.<br />What they <em>practise</em> every day becomes a <em>career</em>.</p>
+        </div>
+
+        <div class="scene__layer feature-row container" id="featureRow" data-range="0.7,0.76,0.965,0.995">
+          <div class="feature-row__cards" id="featureCards"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · PLACEMENTS (light world) -->
+    <section class="scene" id="work" data-vh="3900" data-chapter="2" data-theme="light">
+      <div class="scene__frame">
+        <div class="scene__layer scene__layer--center container" data-range="0.012,0.03,0.085,0.105">
+          <div class="work-award">
+            <span class="label"><span class="label__index">02</span><span class="label__text label__text--dark">Placements</span></span>
+            <h2 class="work-award__title">
+              <span class="work-award__line">We train students for</span>
+              <span class="work-award__line">MNCs, startups and</span>
+              <span class="work-award__line"><span class="grad-text">non-tech companies</span> too</span>
+            </h2>
+            <div class="work-award__box">
+              <p class="mono work-award__q">What is Spheronix corporate training?</p>
+              <p class="work-award__about decode">A six-month program run inside Spheronix Technology. Four months of B-School style learning with practical work every day, then two months on live company projects — finished with a letter of experience and job assistance.</p>
+              <div class="work-award__facts">
+                <div><small class="mono">Duration</small><b class="decode">4 + 2 months</b></div>
+                <div><small class="mono">Format</small><b class="decode">B-School + daily labs</b></div>
+                <div><small class="mono">Outcome</small><b class="decode">Experience letter + jobs</b></div>
+              </div>
+              <button class="btn btn--primary btn--lg" data-placements><span class="btn__label">See all placements</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div id="exhibits"></div>
+        <p class="sample-note mono" id="sampleNote">Sample placement data</p>
+      </div>
+    </section>
+
+    <!-- 03 · PROCESS — route -->
+    <section class="scene" id="process" data-vh="640" data-chapter="3">
+      <div class="scene__frame">
+        <div class="scene__layer scene__layer--top container" data-range="0.04,0.12,0.84,0.95">
+          <div class="beat beat--sm">
+            <span class="label"><span class="label__index">03</span><span class="label__text">Process</span></span>
+            <h2 class="beat__title"><span class="beat__line">From classroom to</span><span class="beat__line">a career that works.</span></h2>
+            <p class="beat__intro">Every concept is practised the same day, reviewed the same week, and shipped on a real project.</p>
+          </div>
+        </div>
+        <div class="route" id="route" data-range="0.1,0.16,0.84,0.95">
+          <div class="route__step" data-node="0" tabindex="0" role="button" aria-expanded="false"><span class="label"><span class="label__index">01</span><span class="label__text">Learn</span></span><span class="route__meta mono">Months 01–04</span><div class="route__card"></div></div>
+          <div class="route__step" data-node="1" tabindex="0" role="button" aria-expanded="false"><span class="label"><span class="label__index">02</span><span class="label__text">Build</span></span><span class="route__meta mono">Months 05–06</span><div class="route__card"></div></div>
+          <div class="route__step" data-node="2" tabindex="0" role="button" aria-expanded="false"><span class="label"><span class="label__index">03</span><span class="label__text">Launch</span></span><span class="route__meta mono">Experience + jobs</span><div class="route__card"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · PROCESS — steps -->
+    <section class="scene" id="steps" data-vh="1550" data-chapter="3">
+      <div class="scene__frame">
+        <div class="scene__layer scene__layer--left container" data-range="0.02,0.06,0.95,0.99">
+          <article class="step" id="step">
+            <span class="label"><span class="label__index" id="stepNo">01</span><span class="label__text label__text--dark" id="stepTag">Learn</span></span>
+            <h3 class="step__title" id="stepTitle"></h3>
+            <p class="step__body" id="stepBody"></p>
+            <div class="type-lines" id="typeLines"><span class="type-lines__line"></span><span class="type-lines__line"></span></div>
+            <div class="step__progress" role="group" aria-label="Go to step"><button aria-label="Step 1: Learn"><i></i></button><button aria-label="Step 2: Build"><i></i></button><button aria-label="Step 3: Launch"><i></i></button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · PROCESS — details statement -->
+    <section class="scene" id="details" data-vh="570" data-chapter="3">
+      <div class="scene__frame">
+        <div class="scene__layer scene__layer--center container" data-range="0.06,0.1,0.86,0.95">
+          <div class="statement" id="statement">
+            <div class="statement__frame">
+              <span class="statement__readout mono" id="readout">10%</span>
+              <i class="statement__handle" data-h="nw" style="left:-5px;top:-5px"></i><i class="statement__handle" data-h="ne" style="right:-5px;top:-5px"></i>
+              <i class="statement__handle" data-h="sw" style="left:-5px;bottom:-5px"></i><i class="statement__handle" data-h="se" style="right:-5px;bottom:-5px"></i>
+              <p class="statement__text"><span class="statement__line">The practice</span><span class="statement__line">makes the professional.</span></p>
+              <div class="collab" aria-hidden="true">
+                <span class="collab__cursor" data-c="0"><svg viewBox="0 0 16 16"><path d="M2 1l11 6.2-4.6 1.2L6.3 13z"/></svg><b>Mentor</b></span>
+                <span class="collab__cursor collab__cursor--alt" data-c="1"><svg viewBox="0 0 16 16"><path d="M2 1l11 6.2-4.6 1.2L6.3 13z"/></svg><b>Teammate</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · PROCESS — a day at Spheronix -->
+    <section class="scene" id="day" data-vh="900" data-chapter="3">
+      <div class="scene__frame">
+        <div class="scene__layer day container" data-range="0.02,0.06,0.94,0.99">
+          <div class="day__head">
+            <span class="label"><span class="label__index">03</span><span class="label__text">A day at Spheronix</span></span>
+            <p class="day__clock" aria-live="polite"><b id="dayClock">09:00</b><span class="mono" id="dayAmPm">AM</span></p>
+          </div>
+          <article class="day__card" id="dayCard">
+            <span class="day__time mono" id="dayTime"></span>
+            <h3 id="dayTitle"></h3>
+            <p id="dayText"></p>
+            <span class="day__progress" aria-hidden="true"><i id="dayProgress"></i></span>
+          </article>
+          <div class="day__track" id="dayTrack" role="slider" tabindex="0" aria-label="Time of day" aria-valuetext="09:00">
+            <div class="day__rail"><i id="dayFill"></i></div>
+            <div class="day__ticks" id="dayTicks"></div>
+            <span class="day__handle" id="dayHandle"><span class="mono" id="dayHandleTime">09:00</span></span>
+            <span class="day__hint mono">Drag the time, or keep scrolling</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · STUDIO -->
+    <section class="scene" id="studio" data-vh="1230" data-chapter="4">
+      <div class="scene__frame">
+        <div class="scene__layer scene__layer--center container" data-range="0.04,0.1,0.26,0.33">
+          <div class="beat">
+            <span class="label"><span class="label__index">04</span><span class="label__text">Studio</span></span>
+            <h2 class="beat__title"><span class="beat__line">One program.</span><span class="beat__line">Every step.</span></h2>
+            <p class="beat__intro">Skills, company projects and placement support in one program. Fewer gaps, a faster start to your career.</p>
+          </div>
+        </div>
+        <div class="scene__layer studio-scene container" data-range="0.42,0.5,0.95,0.995">
+          <div class="studio-scene__panel" id="studioPanel">
+            <div class="layer-stack" id="layerStack"></div>
+            <div class="studio-scene__list" id="capabilities"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · PROGRAM FINDER -->
+    <section class="scene" id="finder" data-vh="320" data-chapter="5">
+      <div class="scene__frame">
+        <div class="scene__layer finder container" data-range="0.03,0.12,0.92,0.99">
+          <div class="finder__panel" id="finderPanel">
+            <span class="label"><span class="label__index">05</span><span class="label__text">Program finder</span></span>
+            <h2 class="finder__title">Pick what <br />excites you.</h2>
+            <p class="finder__intro">Tap up to three tiles — in 3D or in the list — and we’ll match you to a program.</p>
+            <div class="finder__chips" id="finderChips" role="group" aria-label="Interests"></div>
+            <div class="finder__actions">
+              <button class="btn btn--primary btn--lg" id="finderGo" disabled><span class="btn__label">Show my program</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+              <span class="finder__count mono" id="finderCount">0 / 3</span>
+            </div>
+          </div>
+          <div class="finder__panel finder__result" id="finderResult" hidden aria-live="polite">
+            <span class="label"><span class="label__index">✓</span><span class="label__text">Your match</span></span>
+            <h2 class="finder__title" id="resultTitle"></h2>
+            <p class="finder__intro" id="resultWhy"></p>
+            <div class="finder__meter" id="resultMeter"></div>
+            <div class="finder__actions">
+              <button class="btn btn--primary btn--lg" id="resultApply"><span class="btn__label">Apply for this program</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+              <button class="btn btn--ghost" id="resultAgain">Try again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · CONTACT -->
+    <section class="scene scene--contact" id="contact" data-vh="160" data-chapter="6">
+      <div class="scene__frame">
+        <footer class="contact container">
+          <div class="contact__main" data-range="0.15,0.45,-1,-1">
+            <span class="label"><span class="label__index">06</span><span class="label__text">Apply</span></span>
+            <h2 class="contact__title"><span class="contact__line">Your next career,</span><span class="contact__line">with SPHERONIX.</span></h2>
+            <p class="contact__body">From AI-integrated full stack to embedded systems. Tell us your goal and your background, and we’ll suggest the right program and batch.</p>
+            <button class="btn btn--primary btn--lg" data-apply><span class="btn__label">Apply now</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+            <div class="company" id="company"></div>
+          </div>
+          <div class="contact__mark" aria-hidden="true" data-range="0.3,0.7,-1,-1">SPHERONIX</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chapter indicator + dots -->
+  <div class="indicator" aria-hidden="true">
+    <span class="indicator__index mono" id="indIndex">00</span>
+    <span class="indicator__text mono"><span class="indicator__kicker">Chapter</span><span class="indicator__name" id="indName">Welcome</span></span>
+  </div>
+  <nav class="chapter-dots" id="chapterDots" aria-label="Chapters"></nav>
+
+  <!-- AI admissions assistant -->
+  <button class="ask" id="askOpen" aria-expanded="false" aria-controls="askPanel"><span class="ask__dot"></span><span>Ask admissions</span></button>
+  <section class="ask-panel" id="askPanel" hidden aria-label="Admissions assistant">
+    <header class="ask-panel__head">
+      <span class="label"><span class="label__index">AI</span><span class="label__text">Admissions assistant</span></span>
+      <button class="contact-dialog__close" id="askClose" aria-label="Close"><span></span><span></span></button>
+    </header>
+    <p class="ask-panel__note mono">Answers come from this website. Fees, dates and seats are confirmed by the admissions team.</p>
+    <div class="ask-panel__log" id="askLog" data-lenis-prevent aria-live="polite"></div>
+    <div class="ask-panel__suggest" id="askSuggest">
+      <button>Can a non-CS student join?</button>
+      <button>What happens in months 5 and 6?</button>
+      <button>Which program is best for AI?</button>
+    </div>
+    <form class="ask-panel__form" id="askForm">
+      <input id="askInput" maxlength="600" placeholder="Ask about programs, the schedule, placements…" autocomplete="off" aria-label="Your question" />
+      <button class="btn btn--primary" type="submit" aria-label="Send"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    </form>
+  </section>
+
+  <!-- Tile hover label -->
+  <div class="tile-tip" id="tileTip" aria-hidden="true"><span class="label"><span class="label__index" data-tip-no>01</span><span class="label__text" data-tip-text></span></span></div>
+
+  <!-- Cursor CTA over exhibits -->
+  <div class="cursor-cta" id="cursorCta" aria-hidden="true"><span class="btn btn--primary"><span class="btn__label">View all placements</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+
+  <!-- Application dialog -->
+  <dialog class="contact-dialog" id="applyDialog" aria-labelledby="applyTitle">
+    <form class="contact-dialog__panel form" id="applyForm" novalidate>
+      <div class="contact-dialog__head">
+        <span class="label"><span class="label__index">06</span><span class="label__text">Apply</span></span>
+        <button type="button" class="contact-dialog__close" data-close aria-label="Close"><span></span><span></span></button>
+      </div>
+      <h3 id="applyTitle" class="contact-dialog__title">Start your corporate training.</h3>
+      <div class="contact-chat mono"><span class="contact-chat__line">&gt; Tell us who you are and which program you want.</span><span class="contact-chat__line">&gt; Admissions will call you with batch dates and fees.</span></div>
+      <div class="form__grid">
+        <label>Full name<input name="name" autocomplete="name" required /><em data-err="name"></em></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required /><em data-err="email"></em></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel" required /><em data-err="phone"></em></label>
+        <label>Background
+          <select name="background">
+            <option value="">Select…</option>
+            <option>Final-year student</option>
+            <option>Recent graduate</option>
+            <option>Working professional</option>
+            <option>Career switcher</option>
+          </select>
+        </label>
+        <fieldset class="form__programs"><legend>Program</legend><div id="programRadios"></div><em data-err="program"></em></fieldset>
+        <label class="form__full">Anything we should know?<textarea name="message" rows="3"></textarea></label>
+        <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
+        <input type="hidden" name="source" />
+      </div>
+      <p class="form__status" id="formStatus" role="status"></p>
+      <button class="btn btn--primary btn--lg btn--full" type="submit"><span class="btn__label">Submit application</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+    </form>
+  </dialog>
+
+  <!-- All placements dialog -->
+  <dialog class="contact-dialog placements-dialog" id="placementsDialog" aria-labelledby="plTitle">
+    <div class="contact-dialog__panel">
+      <div class="contact-dialog__head">
+        <span class="label"><span class="label__index">02</span><span class="label__text">Placements</span></span>
+        <button type="button" class="contact-dialog__close" data-close aria-label="Close"><span></span><span></span></button>
+      </div>
+      <h3 id="plTitle" class="contact-dialog__title">Where our students work.</h3>
+      <div class="stats" id="stats"></div>
+      <div class="filters mono" id="filters"></div>
+      <div class="students" id="students"></div>
+      <div class="companies" id="companies"></div>
+      <p class="sample-note sample-note--inline mono" id="sampleNote2">* Placement records and company names shown are sample data.</p>
+    </div>
+  </dialog>
+
+  <noscript><p class="noscript">This site needs JavaScript for its animations and content.</p></noscript>
+  <script type="module" src="/js/app.js?v=25"></script>
+</body>
+</html>
